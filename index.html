@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鮮乳坊的商業革命｜農產品電商行銷策略研究</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --deep-blue: #1a2e44;
+      --mid-blue: #1e3a5f;
+      --accent-gold: #c9a84c;
+      --accent-amber: #e8a020;
+      --light-gold: #f0d080;
+      --cream: #faf7f0;
+      --warm-white: #fff9ef;
+      --text-light: #e8dfc8;
+      --text-muted: #8ea3b8;
+      --border: rgba(201,168,76,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: var(--navy);
+      color: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13,27,42,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav ul li a {
+      display: block;
+      padding: 1rem 1.1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color 0.2s;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    nav ul li a:hover { color: var(--accent-gold); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 2rem 4rem;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(30,58,95,0.7) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
+        linear-gradient(160deg, #0d1b2a 0%, #0a1520 50%, #0d1b2a 100%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 860px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--warm-white);
+      margin-bottom: 0.4rem;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle-en {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-abstract {
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.97rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .hero-meta strong { color: var(--accent-gold); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1060px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--warm-white);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 540px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+      margin: 1rem 0 2rem;
+    }
+
+    /* ── ALTERNATE BG ── */
+    .bg-deep { background: var(--deep-blue); }
+    .bg-mid { background: var(--mid-blue); }
+    .bg-dark { background: #090f18; }
+
+    /* ── TEAM ── */
+    #team { background: var(--deep-blue); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .member-card {
+      background: rgba(13,27,42,0.7);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+    .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .member-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-gold);
+      margin-bottom: 1.2rem;
+      background: var(--mid-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      overflow: hidden;
+    }
+    .member-photo-placeholder {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--mid-blue), var(--deep-blue));
+      border: 2px solid var(--accent-gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+    .member-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 0.2rem;
+    }
+    .member-role {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+      margin-bottom: 1rem;
+    }
+    .member-bio {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.85;
+    }
+
+    /* ── FINDINGS ── */
+    #findings { background: #090f18; }
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .finding-card {
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      position: relative;
+      background: rgba(26,46,68,0.4);
+      transition: border-color 0.3s;
+    }
+    .finding-card:hover { border-color: var(--accent-gold); }
+    .finding-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .finding-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      margin-bottom: 0.6rem;
+    }
+    .finding-text {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.85;
+    }
+    .finding-metric {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.2rem 0.6rem;
+      margin-top: 0.8rem;
+    }
+
+    /* ── MEDIA SECTIONS ── */
+    .media-block {
+      background: rgba(13,27,42,0.6);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .media-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .media-title .icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .embed-container {
+      width: 100%;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .embed-container iframe {
+      width: 100%;
+      display: block;
+      border: none;
+    }
+    .embed-container embed {
+      width: 100%;
+      display: block;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .download-btn:hover {
+      background: var(--accent-gold);
+      color: var(--navy);
+    }
+    .download-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    audio {
+      width: 100%;
+      margin-bottom: 1rem;
+      accent-color: var(--accent-gold);
+    }
+    audio::-webkit-media-controls-panel {
+      background: var(--deep-blue);
+    }
+    video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+
+    /* ── PDF NOTE ── */
+    .pdf-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* ── TRANSCRIPT ── */
+    .transcript-box {
+      background: rgba(9,15,24,0.8);
+      border: 1px solid rgba(201,168,76,0.1);
+      padding: 1.5rem;
+      max-height: 320px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.9;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin-bottom: 1rem;
+    }
+    .transcript-box::-webkit-scrollbar { width: 4px; }
+    .transcript-box::-webkit-scrollbar-track { background: transparent; }
+    .transcript-box::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .transcript-speaker {
+      font-weight: 700;
+      color: var(--accent-amber);
+    }
+    .transcript-line { margin-bottom: 0.8rem; }
+
+    /* ── TWO COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media(max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── FORMULA ── */
+    .formula-box {
+      border: 1px solid var(--accent-gold);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      background: rgba(201,168,76,0.04);
+    }
+    .formula-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      color: var(--accent-amber);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060c14;
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+    .footer-info {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+
+    @media(max-width: 600px) {
+      .hero-stats { gap: 2rem; }
+      section { padding: 3.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <ul>
+    <li><a href="#hero">首頁</a></li>
+    <li><a href="#team">研究團隊</a></li>
+    <li><a href="#findings">研究發現</a></li>
+    <li><a href="#report">研究報告</a></li>
+    <li><a href="#slides">簡報成果</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#video">影片總覽</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">農產品電商行銷策略分析</div>
+    <h1 class="hero-title fade-up delay-1">
+      鮮乳坊的<span>商業革命</span>
+    </h1>
+    <p class="hero-subtitle-en fade-up delay-2">From Zero to 820 Million — The Trust Economy of Taiwan's Dairy Disruptor</p>
+    <p class="hero-abstract fade-up delay-2">
+      本研究以「鮮乳坊」為個案，深入剖析台灣農產品電商如何在全球最貴鮮乳市場中，
+      透過信任溢價、精準社群行銷與跨界聯名，實現從608萬群募到8.2億年營收的品牌奇蹟，
+      重新定義農業電商化的成功模式。
+    </p>
+    <div class="hero-stats fade-up delay-3">
+      <div class="stat-item">
+        <span class="stat-num">8.2億</span>
+        <span class="stat-label">年營收（2023）</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">200%</span>
+        <span class="stat-label">訂閱制成長</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+30%</span>
+        <span class="stat-label">信任溢價</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">170%</span>
+        <span class="stat-label">社群討論增幅</span>
+      </div>
+    </div>
+    <p class="hero-meta fade-up delay-4">
+      <strong>農企二A</strong> &nbsp;|&nbsp; 屏東科技大學農企業管理系 &nbsp;|&nbsp; 2026年
+    </p>
+  </div>
+</section>
+
+<!-- ── TEAM ── -->
+<section id="team">
+  <div class="section-inner">
+    <p class="section-label">Research Team</p>
+    <h2 class="section-title">研究團隊成員</h2>
+    <div class="divider"></div>
+    <div class="team-grid">
+
+      <!-- 林子津 -->
+      <div class="member-card">
+        <div class="member-photo-placeholder">林</div>
+        <div class="member-name">林子津</div>
+        <div class="member-role">主要研究者 · 數據分析</div>
+        <p class="member-bio">
+          你好，我是林子津。我目前是一名大學生，主修與數據分析與研究相關的領域。在學期間，我培養了對數據的敏感度，擅長運用 Stata 與 Excel 等工具進行計量分析、統計建模與消費者行為研究。對我而言，數據不只是冷冰冰的數字，而是能洞察市場趨勢、解決真實問題的關鍵鑰匙。
+          <br><br>
+          除了量化分析的專業訓練，我也對「專案企劃」與「市場研究」充滿熱情。我曾主導過針對連鎖服飾品牌（如 UNIQLO、GU 與 NET）的校園消費者行為調查，從問卷設計、資料清理到最終的交叉分析，均展現了嚴謹的邏輯思維與獨立研究能力。此外，我也熱衷於探討永續議題與全球痛點，曾深入研究如何透過精準的提案與資源優化，來解決在地及全球的剩食與食物浪費問題。
+          <br><br>
+          在硬實力之外，我是一個追求細節、重視美感與功能平衡的人。無論是處理複雜的學術簡報，還是參與生活物件的創意設計，我都能兼顧邏輯的嚴密性與視覺的質感。在團隊中，我習慣扮演理性分析、條理分明的角色，並能用深入淺出的方式將複雜的數據結論傳遞給不同的夥伴。面對未來的挑戰，我期許自己能持續將「扎實的數據力」與「敏銳的市場洞察」相結合，在不同的領域中創造實質的影響力。
+        </p>
+      </div>
+
+      <!-- 陳柔瑩 -->
+      <div class="member-card">
+        <div class="member-photo-placeholder">陳</div>
+        <div class="member-name">陳柔瑩</div>
+        <div class="member-role">行銷策略 · 視覺設計</div>
+        <p class="member-bio">
+          各位教授、各位同學，大家好！我是陳柔瑩，目前就讀於屏東科技大學農企業管理系二年級。雖然目前就讀農企管系，但我對商務行銷與統計研究有著極高的熱忱。在學期間，我積極投入量化研究與流程規劃。在今年，我非常榮幸能參與「第 27 屆永續發展管理研討會」並發表論文，這段經歷鍛鍊了我嚴謹的邏輯思維，也讓我證明了自己在大二就具備獨立進行學術研究的潛力。
+          <br><br>
+          我喜歡把課堂上的理論，拿到真實的戰場上去檢驗。因此我積極參與各項全國性競賽，曾獲得「全國大專院校學生創意與創業競賽」達人組的全國第三名！此外，我也曾晉級「技職盃黑客松」的全國決賽。在黑客松高強度的限時高壓下，我和團隊從市場痛點分析到產品原型設計，完成了高規格的簡報提案。這些實戰經驗，培養了我敏銳的市場洞察力與團隊溝通能力。
+          <br><br>
+          此外因應行銷數位化的趨勢，我積極自我加值，目前已考取「電子商務分析規劃師」，以及 AI 圖像設計、影音多媒體等多張專業證照。同時，我也擔任過屏科大四健會的副社長兼美宣，負責過多次大型活動的視覺美化與品牌傳達。我擅長利用 AI 工具結合美宣設計，將複雜的數據和理念，轉化為吸引大眾目光的視覺語言。我期許自己能帶著這份跨領域的實作經驗，進入「行銷管理研究所」繼續深造。
+        </p>
+      </div>
+
+      <!-- 洪愷呈 -->
+      <div class="member-card">
+        <div class="member-photo-placeholder">洪</div>
+        <div class="member-name">洪愷呈</div>
+        <div class="member-role">永續策略 · 創意發想</div>
+        <p class="member-bio">
+          目前就讀於農企業管理系。很多人對農業的想像可能還停留在傳統的勞動，但對我來說，農業是一門結合了永續、創新與生活美學的現代管理科學。在學業上，我對「循環經濟」與「休閒農業管理」特別有熱忱。我曾經深入研究過如何將鳳梨的副產品回收再利用，打造生態循環農場，也規劃過休閒蘭園的國際市場拓展策略。我相信，現代農企的精髓就在於如何在商業、環境與人情味之間找到最完美的平衡。
+          <br><br>
+          在團隊中，我的 MBTI 人格特質是 ENFP-T（聚光燈型／競選者）。這意味著我天生擁有源源不絕的創意與好奇心，喜歡嘗試各種新事物，像是利用 AI 工具來進行視覺設計、貼圖創作或美學分析。除了理性的一面，私底下的我其實很感性，熱愛音樂，夢想著有一天能拿著吉他、用溫暖的民謠嗓音彈唱自己的故事。
+          <br><br>
+          我是個天生的「守護者」性格，對待朋友、家人和團隊夥伴有著強烈的責任感與忠誠度。在小組合作中，我不僅願意為了團隊的榮譽全力以赴、分擔繁重的工作，更希望能成為大家的強力後盾。無論是數據分析還是創意發想，交給我，我一定會負責到底，請多多指教！
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH FINDINGS ── -->
+<section id="findings">
+  <div class="section-inner">
+    <p class="section-label">Key Findings</p>
+    <h2 class="section-title">核心研究發現</h2>
+    <div class="divider"></div>
+    <p class="section-desc">從鮮乳坊案例萃取出農產品電商突圍的五大關鍵洞察，具備高度可複製性。</p>
+
+    <div class="formula-box">
+      <p class="formula-text">農業電商成功公式：故事（信任）＋ 數據（CRM）＋ 盟友（聯名）</p>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <div class="finding-number">01</div>
+        <div class="finding-title">信任溢價是農產品電商的核心護城河</div>
+        <p class="finding-text">
+          鮮乳坊透過「獸醫現場把關」、「單一牧場」與透明產銷履歷，將無形的品質保證轉化為具體的品牌溢價。消費者購買的不只是乳脂肪含量，而是安心感與品牌理念，使鮮乳坊售價能穩定維持在市場均價30%以上。
+        </p>
+        <span class="finding-metric">信任溢價 +30%</span>
+      </div>
+      <div class="finding-card">
+        <div class="finding-number">02</div>
+        <div class="finding-title">D2C 訂閱制創造穩定現金流與高忠誠顧客</div>
+        <p class="finding-text">
+          透過官網直營電商結合 LINE 社群數據綁定，鮮乳坊實現精準分眾行銷，行銷訊息信賴率高達70%。訂閱制在2022—2024年間成長200%，成功將一次性購買者轉化為長期鐵粉，顧客終身價值（CLV）大幅提升。
+        </p>
+        <span class="finding-metric">訂閱制成長 200%</span>
+      </div>
+      <div class="finding-card">
+        <div class="finding-number">03</div>
+        <div class="finding-title">跨界聯名是突破同溫層的最低成本策略</div>
+        <p class="finding-text">
+          與全家便利商店聯名推出優格、饅頭，運用安索夫矩陣多角化擴張，使品牌搜尋熱度在聯名期間飆升至Google Trends最高點100分，社群討論增幅達170%，成功將線上小眾品牌推入全台3,000家通路。
+        </p>
+        <span class="finding-metric">Google Trends 100點</span>
+      </div>
+      <div class="finding-card">
+        <div class="finding-number">04</div>
+        <div class="finding-title">社會使命驅動的公平交易強化品牌黏著度</div>
+        <p class="finding-text">
+          作為B型企業，鮮乳坊收購價比法定標準高出30%至40%，確保酪農生計同時保障乳源品質（乳脂肪3.6%—4.1%優於市場平均）。這種「共好」商業模式讓消費者感受到購買行為具有社會意義，大幅提升品牌情感連結。
+        </p>
+        <span class="finding-metric">收購溢價 +30~40%</span>
+      </div>
+      <div class="finding-card">
+        <div class="finding-number">05</div>
+        <div class="finding-title">群募驗證市場需求是農業電商的低風險起點</div>
+        <p class="finding-text">
+          2015年透過FlyingV群募608萬元，不僅取得啟動資金，更驗證了消費者對透明乳源的真實需求，並培養了超過5,000位首批忠實支持者。這批早期用戶成為品牌最初的口碑引擎，奠定線上直營的基礎，最終帶動年營收成長至8.2億元。
+        </p>
+        <span class="finding-metric">年營收 8.2億元</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH REPORT ── -->
+<section id="report" class="bg-deep">
+  <div class="section-inner">
+    <p class="section-label">Research Report</p>
+    <h2 class="section-title">完整研究報告</h2>
+    <div class="divider"></div>
+
+    <div class="media-block">
+      <div class="media-title">
+        <span class="icon">📄</span>
+        農產品電商行銷策略分析：以「鮮乳坊」之品牌革命為例
+      </div>
+      <div class="embed-container">
+        <iframe src="docs/research-report.pdf" height="600" title="研究報告 PDF"></iframe>
+      </div>
+      <p class="pdf-note">※ 若 PDF 無法顯示，請點選下方按鈕直接下載。</p>
+      <br>
+      <a class="download-btn" href="docs/research-report.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        下載研究報告（PDF）
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SLIDES ── -->
+<section id="slides" class="bg-dark">
+  <div class="section-inner">
+    <p class="section-label">Presentation Slides</p>
+    <h2 class="section-title">簡報成果</h2>
+    <div class="divider"></div>
+
+    <div class="media-block">
+      <div class="media-title">
+        <span class="icon">📊</span>
+        鮮乳坊電商行銷革命 — 10頁投影片
+      </div>
+      <div class="embed-container">
+        <iframe src="docs/slides.pdf" height="520" title="簡報 PDF"></iframe>
+      </div>
+      <p class="pdf-note">※ 若 PDF 無法顯示，請點選下方按鈕直接下載。</p>
+      <br>
+      <a class="download-btn" href="docs/slides.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        下載簡報（PDF）
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PODCAST ── -->
+<section id="podcast" class="bg-deep">
+  <div class="section-inner">
+    <p class="section-label">Podcast Episode</p>
+    <h2 class="section-title">Podcast 音頻</h2>
+    <div class="divider"></div>
+
+    <div class="media-block">
+      <div class="media-title">
+        <span class="icon">🎙</span>
+        【數位農學家】鮮乳坊的品牌革命與電商之路
+      </div>
+      <audio controls>
+        <source src="media/podcast.m4a" type="audio/mp4">
+        <source src="media/podcast.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音頻播放，請下載後收聽。
+      </audio>
+      <a class="download-btn" href="media/podcast.m4a" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        下載音頻檔案
+      </a>
+    </div>
+
+    <div class="media-block">
+      <div class="media-title">
+        <span class="icon">📝</span>
+        Podcast 逐字稿
+      </div>
+      <div class="transcript-box">
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>各位聽眾朋友大家好，歡迎收聽【數位農學家】！我是主持人小 A。今天我們要聊一個大家每天早起可能都會喝到的東西，但你可能不知道，它背後藏著一場震撼台灣農業的革命。我們今天邀請到行銷專家 B 老師，來跟我們聊聊「鮮乳坊」這個品牌。老師，聽說台灣的鮮乳其實大有來頭？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>沒錯，小 A。在進入鮮乳坊的故事前，大家可能沒想過，台灣鮮乳每公升平均售價高達 92.9 元，這可是全球第一貴的價格。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>全球第一貴？這也太驚人了吧！既然這麼貴，台灣的酪農應該賺很多錢吧？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>其實不然。台灣鮮乳市場正面臨內憂外患。外患是進口鮮乳每年以 29.2% 的速度強勁成長，價格極具競爭力。內憂則是產業結構問題，台灣農業人口嚴重老化，65 歲以上佔了 17.1%，而且長期以來酪農都被中盤商剝削。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>聽起來是一個進退兩難的困境。那鮮乳坊是怎麼在這種情況下突圍的？我記得他們好像是從募資起家的？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>沒錯！鮮乳坊在 2015 年從 FlyingV 平台發起募資，最初只拿到了 608 萬元的啟動資金，但到了 2023 年，他們的年營收已經飆升到 8.2 億元。他們的成功關鍵就在於「不打價格戰，改打信任戰」。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>「信任戰」？這聽起來很抽象，他們具體是怎麼做的？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>簡單來說就是「信任溢價」。他們透過社群媒體講述「獸醫現場把關」跟「單一牧場」的故事。因為生產過程透明、有施肥紀錄與產銷履歷，消費者即使知道他們的售價比市面大廠高出約 30%，也願意買單。而且鮮乳坊不只對消費者好，他們實踐公平交易，收購價比法定標準高出 30% 到 40%，真正回饋給酪農。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>原來如此，這就是所謂的「社會協作」吧！那在數位經營這塊，他們有沒有什麼亮點數據可以分享？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>這部分正是他們的強項。鮮乳坊非常擅長利用 LINE 和官網數據進行「分眾行銷」。數據顯示，他們的行銷訊息信賴率高達 70%。更厲害的是，他們推動的「線上訂閱制」，在 2022 到 2024 年間成倍增長，增幅高達 200%。這讓他們擁有了非常穩定的現金流和一群忠誠的「鐵粉」。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>200% 的訂閱成長！這對任何電商來說都是夢寐以求的數字。但我發現，現在不只在網路上，連巷口的便利商店都能看到鮮乳坊，這是他們的下一步策略嗎？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>沒錯，這就是「跨界聯名」的威力。鮮乳坊運用了所謂的「安索夫矩陣」來進行市場擴張。例如他們跟全家便利商店聯名推出優格、饅頭。聯名期間，他們在 Google Trends 的搜尋熱度直接衝到最高峰的 100 點，社群討論度也增加了 170%。這讓鮮乳坊成功突破同溫層，從線上走入全台超過 3,000 家實體通路。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>聽完這些數據，真的覺得鮮乳坊不只是賣牛奶，更像是在經營一場社會運動。老師最後對於想投入農產品電商的朋友，有什麼建議或未來的觀察嗎？</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>鮮乳坊的成功方程式可以總結成：「故事（信任）+ 數據（CRM）+ 盟友（聯名）」。不過我也觀察到一些可以優化的地方。第一是物流成本，冷鏈配送非常貴，如何優化「最後一哩路」是所有農產電商的挑戰。第二是數據深度運用，可以更進一步分析「訂閱制顧客」的終身價值。最後是身為 B 型企業，未來可以結合「碳標籤」或「環保包裝」。現在的消費者越來越看重永續經營，這會是另一個極具吸引力的賣點。</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 A：</span>真的獲益良多！原來一瓶牛奶背後有這麼多精準的數據與感人的故事。農業轉型不只是數位化，更是人與產地連結的重新建立。今天非常感謝 B 老師的分享！</div>
+        <div class="transcript-line"><span class="transcript-speaker">主持人 B：</span>謝謝大家，我們下次見！</div>
+      </div>
+      <a class="download-btn" href="docs/podcast-transcript.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        下載逐字稿（Word）
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEO OVERVIEW ── -->
+<section id="video" class="bg-dark">
+  <div class="section-inner">
+    <p class="section-label">Video Overview</p>
+    <h2 class="section-title">影片總覽</h2>
+    <div class="divider"></div>
+
+    <div class="media-block">
+      <div class="media-title">
+        <span class="icon">▶</span>
+        鮮乳坊的電商革命 — 營收奇蹟
+      </div>
+      <div class="embed-container">
+        <video controls preload="metadata">
+          <source src="media/video-overview.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放，請下載後觀看。
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">鮮乳坊的商業革命</div>
+  <p class="footer-info">
+    農產品電商行銷策略分析 &nbsp;|&nbsp; 屏東科技大學農企業管理系<br>
+    農企二A &nbsp;·&nbsp; 林子津 &nbsp;·&nbsp; 陳柔瑩 &nbsp;·&nbsp; 洪愷呈<br>
+    2026 年期末研究成果
+  </p>
+</footer>
+
+</body>
+</html>
